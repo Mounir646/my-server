@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+<!-- Galaxy Background -->
+<canvas id="bg"></canvas>
+<nav class="nav">
+        <div class="logo"><a href="#">Your Logo</a></div>
+        <div class="main_list" id="mainListDiv">
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <span class="navTrigger">
+            <i></i>
+            <i></i>
+            <i></i>
+        </span>
+</nav>
+
+<div class="contact-container">
+  <!-- Left: Form -->
+  <div class="contact-form">
+    <h2>Send me a message</h2><br>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <!-- Right: Info -->
+  <div class="contact-info">
+    <h2>Contact Info</h2><br>
+    <p><strong>Email:</strong> mounirasrih26gmail.com</p>
+    <p><strong>Phone:</strong> +212 6 00 00 00 00</p>
+    <p><strong>Address:</strong> hocima, Morocco</p>
+  </div>
+</div>
+<div class="contact-info">
+    <h2>Contact Info</h2>
+    <p><strong>Email:</strong> youremail@example.com</p>
+    <p><strong>Phone:</strong> +212 6 00 00 00 00</p>
+    <p><strong>Address:</strong> Casablanca, Morocco</p>
+
+    <div class="social-buttons">
+        <a href="https://www.instagram.com/mounir.asrih/" target="_blank" class="social-btn insta">Instagram</a>
+        <a href="https://t.me" target="_blank" class="social-btn telegram">Telegram</a>
+        <a href="https://web.facebook.com/monir.asrih.2025/" target="_blank" class="social-btn fb">Facebook</a>
+        <a href="https://github.com/Mounir646" target="_blank" class="social-btn github">GitHub</a>
+    </div>
+</div>
+
+
+<script src="three.min.js"></script>
+<script src="contact.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.navTrigger').click(function(){
+                $(this).toggleClass('active');
+                $('.main_list').slideToggle();
+            });
+
+            $(window).scroll(function() {
+                if ($(document).scrollTop() > 50) {
+                    $('.nav').addClass('affix');
+                } else {
+                    $('.nav').removeClass('affix');
+                }
+            });
+        });
+    </script>
+    <script>
+        const navTrigger = document.querySelector('.navTrigger');
+const mainListDiv = document.querySelector('.main_list');
+
+navTrigger.addEventListener('click', () => {
+    mainListDiv.classList.toggle('show_list');   // يبان ويختفي
+    navTrigger.classList.toggle('active');       // animation ديال hamburger
+});
+
+    </script>
+</body>
+</html>

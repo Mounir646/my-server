@@ -1,0 +1,217 @@
+/* Reset + Fonts */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: "Quicksand", sans-serif; font-size:16px; }
+
+/* Navbar */
+.nav {
+    width: 100%;
+    height: 65px;
+    line-height: 65px;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: transparent; 
+    z-index: 999;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+.nav.affix {
+    background-color: #111;
+}
+.nav .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+.nav .main_list ul {
+    display: flex;
+    list-style: none;
+}
+.nav .main_list ul li {
+    margin-left: 20px;
+}
+.nav .main_list ul li a {
+    color: #fff7f7;
+    text-decoration: none;
+    font-size: 1.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.nav .main_list ul li a:hover {
+    color: #a99cdb;
+    transform: translateY(-5px);
+}
+.nav .main_list ul li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #a99cdb;
+    transition: width 0.3s;
+}
+.nav .main_list ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger Button */
+.navTrigger {
+    display: none;
+    cursor: pointer;
+}
+.navTrigger i {
+    background-color: #fff;
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin: 5px;
+}
+
+/* Home Section */
+.home {
+    width: 100%;
+    height: 100vh;
+    background: url(https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&auto=format&fit=crop&w=1500&q=80) center/cover no-repeat;
+}
+
+/* Content */
+.myH2 { text-align:center; font-size:3rem; margin:20px 0; }
+.myP { padding: 0 15%; margin-bottom: 15px; line-height:1.6; text-align:justify; }
+
+/* Footer */
+#fin { text-align:center; margin:30px 0; font-size:1rem; }
+
+/* 3D Background Canvas */
+#bg {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Contact Container */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+    padding: 90px;
+    gap: 50px;
+    color: #fff;
+}
+.contact-form, .contact-info {
+    background: rgba(0,0,0,0.5);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+/* Form inputs */
+.contact-form input, .contact-form textarea, .contact-form button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+.contact-form button {
+    background: #ff4081;
+    color: #fff;
+    cursor: pointer;
+}
+.contact-form button:hover {
+    background: #e91e63;
+}
+
+/* Social Buttons */
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.social-btn {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.social-btn.insta { background: #E1306C; }
+.social-btn.telegram { background: #0088cc; }
+.social-btn.fb { background: #1877F2; }
+.social-btn.github { background: #030303; }  
+
+
+/* Hover effect */
+.social-btn::before {
+    content: "";
+    position: absolute;
+    top:0; left:-100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: 0.5s;
+}
+.social-btn:hover::before { left:0; }
+.social-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    /* Navbar */
+    .nav .main_list { display:none; width:100%; position:absolute; top:65px; left:0; background-color:#111; }
+    .nav .main_list ul { flex-direction: column; padding-top: 20px; }
+    .nav .main_list ul li { text-align:center; margin:0; padding:15px 0; }
+    .nav .main_list ul li a { font-size:2rem; }
+
+    .navTrigger { display:block; }
+
+    /* Contact */
+    .contact-container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 30px;
+    }
+    .contact-form, .contact-info {
+        width: 100%;
+        padding: 20px;
+    }
+    .social-buttons {
+        justify-content: center;
+    }
+    .social-btn {
+        padding: 10px 15px;
+        font-size: 14px;
+        display: inline-block;
+    }
+}
+
+/* Body scroll fix */
+body, html {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    background: #000;
+}
+@media screen and (max-width:768px) {
+    .nav .main_list { 
+        display: none;          /* مخبيها */
+        width: 100%;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        background-color: #111;
+    }
+    .nav .main_list.show_list { display: block; }  /* ملي toggle يشتغل */
+}
