@@ -45,6 +45,22 @@ body {
 #d2 { background-color: #111; padding: 30px; border-radius: 15px; width: 70%; margin: 0 auto 40px; box-shadow: 0 0 15px rgba(255,0,0,0.6); }
 #d2 img { width: 400px; border-radius: 15px; border: 3px solid #ff0000; transition: transform 0.3s; }
 #d2 img:hover { transform: scale(1.05); }
+#d2 {
+    text-align: center;
+    padding: 20px; 
+    background-color: #111; 
+    border-radius: 15px; 
+    width: 70%; 
+    margin: 20px auto;
+    box-shadow: 0 0 15px rgba(255,0,0,0.5);
+}
+
+/* Mobile responsive */
+@media screen and (max-width:768px){
+    #d2 { width: 90%; padding: 15px; }
+    #d2 img { max-width: 100%; } /* image tsghr automatic */
+}
+
 .btn {
     margin-top: 20px;
     padding: 10px 25px;
