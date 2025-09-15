@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="monportfolie.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+<title>Portfolio</title>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="nav">
+    <div class="logo"><a href="#">Mounir Asrih</a></div>
+    <div class="main_list">
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <span class="navTrigger">
+        <i></i>
+        <i></i>
+        <i></i>
+    </span>
+</nav>
+
+<div id="globe">
+    <div id="d2" class="d00">
+        <img src="anime-girl-vampire-nun-smoking-4k-wallpaper-uhdpaper.com-608@0@j.jpg" alt="profile">
+        <h1>Hello, I'm Mounir Asrih</h1>
+        <h2>Web & App Developer</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ad, eius ab provident rerum tempora...</p>
+    </div>
+
+    <!-- Skills & Projects -->
+    <div id="skills-projects" class="section">
+        <h2>My Skills & Projects</h2>
+        <div class="skills">
+            <h3>Programming Languages</h3>
+            <ul>
+                <li><i class="fab fa-html5 fa-2x"></i></li>
+                <li><i class="fab fa-css3-alt fa-2x"></i></li>
+                <li><i class="fab fa-js-square fa-2x"></i></li>
+                <li><i class="fab fa-python fa-2x"></i></li>
+                <li><i class="fab fa-java fa-2x"></i></li>
+                <li><i class="fab fa-php fa-2x"></i></li>
+                <li><i class="fab fa-react fa-2x"></i></li>
+                <li><i class="fab fa-linux fa-2x"></i></li>
+                <li><i class="fas fa-database fa-2x"></i></li>
+            </ul>
+        </div>
+
+        <div class="projects">
+            <h3>My Projects</h3>
+            <ul>
+                <li><i class="fas fa-laptop-code fa-2x"></i></li>
+                <li><i class="fas fa-cloud fa-2x"></i></li>
+                <li><i class="fas fa-question-circle fa-2x"></i></li>
+                <li><i class="fas fa-cloud-sun fa-2x"></i></li>
+                <li><i class="fas fa-comments fa-2x"></i></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="get.js"></script>
+<script>
+/* Hamburger menu toggle */
+const navTrigger = document.querySelector('.navTrigger');
+const mainListDiv = document.querySelector('.main_list');
+
+navTrigger.addEventListener('click', () => {
+    mainListDiv.classList.toggle('show_list');
+    navTrigger.classList.toggle('active');
+});
+
+/* Navbar change color on scroll */
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.nav');
+    if(window.scrollY > 50){
+        nav.classList.add('affix');
+    } else {
+        nav.classList.remove('affix');
+    }
+});
+
+/* Get Started Button Redirect */
+document.getElementById('getStarted').addEventListener('click', () => {
+    window.location.href = "contact.html"; // redirect page
+});
+</script>
+
+</body>
+</html>

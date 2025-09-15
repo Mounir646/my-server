@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="Portfolio.css">
+<title>Portfolio</title>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="logo"><a href="#">Mounir asrih</a></div>
+    <div class="main_list">
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <span class="navTrigger">
+        <i></i>
+        <i></i>
+        <i></i>
+    </span>
+</nav>
+
+<div id="vanta-bg">
+  <div class="content">
+    <h1>Explore the Globe</h1>
+    <p>Discover Mon portolie </p>
+    <button class="btn" id="getStarted">Get Started</button>
+
+
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+<script src="Portfolio.js"></script>
+<script src="get.js"></script>
+
+<script>
+  // Hamburger menu functionality
+  const navTrigger = document.querySelector('.navTrigger');
+  const mainList = document.querySelector('.main_list');
+
+  navTrigger.addEventListener('click', () => {
+    mainList.classList.toggle('show_list');
+    navTrigger.classList.toggle('active');
+  });
+
+  // Navbar background on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.nav');
+    if (window.scrollY > 50) {
+      nav.classList.add('affix');
+    } else {
+      nav.classList.remove('affix');
+    }
+  });
+</script>
+
+</body>
+</html>
