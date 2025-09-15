@@ -5,6 +5,9 @@ body {
     font-family: Arial, sans-serif;
     color: #fff;
 }
+* {
+  box-sizing: border-box;
+}
 
 /* Navbar */
 .nav {
